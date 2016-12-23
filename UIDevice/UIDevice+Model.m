@@ -69,6 +69,16 @@
         return @"iPhone SE";
     }
     
+    if ([deviceType isEqualToString:@"iPhone9,1"] ||
+        [deviceType isEqualToString:@"iPhone9,3"]) {
+        return @"iPhone 7";
+    }
+    
+    if ([deviceType isEqualToString:@"iPhone9,2"] ||
+        [deviceType isEqualToString:@"iPhone9,4"]) {
+        return @"iPhone 7 Plus";
+    }
+    
     
     // 增加对iPad的判断
     if ([deviceType isEqualToString:@"iPad1,1"]) {
