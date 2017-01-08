@@ -13,9 +13,9 @@
 
 
 /**
- 获取手机星号
+ 获取手机型号
 
- @return 星号
+ @return 型号
  */
 + (NSString *)machineModel;
 
