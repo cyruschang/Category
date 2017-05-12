@@ -8,8 +8,7 @@
 
 #import "UITextField+Accomplish.h"
 
-#define kInputAccessoryRightMarigh 15.0f
-#define kInputAccessoryHeight 50.0f
+#define kInputAccessoryHeight 44.0f
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 
 @implementation UITextField (Accomplish)
@@ -19,28 +18,17 @@
 
 - (UIView *)createInputView {
     UIView *access = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kInputAccessoryHeight)];
-    access.backgroundColor = [UIColor whiteColor];
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kInputAccessoryHeight)];
+    toolBar.barStyle = UIBarStyleDefault;
     
-    UIView *up = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 1)];
-    up.backgroundColor = [UIColor lightGrayColor];
-    [access addSubview:up];
-    
-    UIView *down = [[UIView alloc] initWithFrame:CGRectMake(0, kInputAccessoryHeight - 1, kScreenW, 1)];
-    down.backgroundColor = [UIColor lightGrayColor];
-    [access addSubview:down];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:self action:nil];
+    UIBarButtonItem *resign = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(resignFirstResponder)];
+    [resign setTintColor:[UIColor grayColor];
+    NSArray *itemArray = [NSArray arrayWithObjects:button, resign, nil];
+    [toolBar setItems:itemArray];
     
     
-    UIButton *finish = [[UIButton alloc] initWithFrame:CGRectMake(kScreenW - kInputAccessoryHeight - kInputAccessoryRightMarigh, 0, kInputAccessoryHeight, kInputAccessoryHeight)];
-    [finish setTitle:@"完成" forState:UIControlStateNormal];
-    finish.titleLabel.textAlignment = NSTextAlignmentRight;
-    finish.titleLabel.font = [UIFont systemFontOfSize:15];
-    [finish setTitleColor:[UIColor colorWithRed:68/255.0f green:68/255.0f blue:68/255.0f alpha:1]
-                 forState:UIControlStateNormal];
-    [finish addTarget:self
-               action:@selector(resignFirstResponder)
-     forControlEvents:UIControlEventTouchUpInside];
-    [access addSubview:finish];
-    return access;
+    return toolBar;
 
 }
 @end
