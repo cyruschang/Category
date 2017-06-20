@@ -17,8 +17,6 @@
         return nil;
     }
     
-    NSParameterAssert((subString != nil) || (![subString isEqualToString:@""]));
-    
     NSMutableArray *rangeArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < self.length - subString.length + 1; i++) {
         NSString *tempString = [self substringWithRange:NSMakeRange(i, subString.length)];
