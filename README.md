@@ -1,5 +1,5 @@
 # Category
-自用的一些工具类，方便开发
+自用的一些分类，方便开发
 
 - UIDevice 获取设备的型号名称
 - UITextField 给UItextField添加"完成"按钮
