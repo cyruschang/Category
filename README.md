@@ -1,4 +1,4 @@
-# Util
+# Category
 自用的一些工具类，方便开发
 
 - UIDevice 获取设备的型号名称
