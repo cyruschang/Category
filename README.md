@@ -7,3 +7,4 @@
 - NSObject 快速取消所有第一响应者，用来降落键盘
 - NSString 计算一个子串在字符串中所有出现的位置
 - UIViewController 导航栏pop到指定的控制器
+- UIAlertView的Block形式调用，更加方便
