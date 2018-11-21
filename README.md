@@ -9,3 +9,4 @@
 - UIViewController 导航栏pop到指定的控制器
 - UIAlertView的Block形式调用，更加方便
 - UIImage压缩图片到指定大小以下。（做分享功能经常遇到图片压缩需求）
+- NSMutableArray翻转
